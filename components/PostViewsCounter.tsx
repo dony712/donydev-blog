@@ -21,6 +21,8 @@ export default function PostViewsCounter({
   const [views, setViews] = useState<number>(0);
 
   useEffect(() => {
+    if (!pageId) return;
+    
     const updateViews = async () => {
       try {
         const storageKey = `viewed_${pageId}`;

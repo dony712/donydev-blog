@@ -1,8 +1,5 @@
 import { initializeApp, getApps } from "firebase/app";
-import {
-  initializeFirestore,
-  persistentLocalCache,
-} from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -19,6 +16,4 @@ const app =
     ? initializeApp(firebaseConfig)
     : getApps()[0];
 
-export const db = initializeFirestore(app, {
-  localCache: persistentLocalCache(),
-});
+export const db = getFirestore(app);
