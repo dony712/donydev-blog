@@ -30,7 +30,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300`}>
+      <head>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-6211849658783097"
+        ></meta>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6211849658783097"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300`}
+      >
         {/* Bungkus children dengan ThemeProvider */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
