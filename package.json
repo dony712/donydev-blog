@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "clear-mod": "rmdir /s /q node_modules && del package-lock.json",
-    "push-update": "node -e \"require('child_process').execSync(`git add . && git commit -m \\\"${process.env.npm_config_msg}\\\" && git push origin main`, {stdio:'inherit'})\"",
-    "push-update-help": "echo Example: npm run push-update --msg=\"fix firebase production\""
+    "push-update": "node -e \"const { execSync } = require('child_process'); const msg = process.argv[1] || 'update'; execSync('git add .', {stdio:'inherit'}); execSync(`git commit -m \\\"${msg}\\\"`, {stdio:'inherit'}); execSync('git push origin main', {stdio:'inherit'});\"",
+    "push-update-help": "echo Example: npm run push-update -- \"fix firebase production\""
   },
   "dependencies": {
     "@google-analytics/data": "^6.0.0",
