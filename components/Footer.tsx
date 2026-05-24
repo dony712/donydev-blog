@@ -14,13 +14,11 @@ interface FooterProps {
   pageId: string;
 }
 
-export default function Footer({
-  pageId,
-}: FooterProps) {
+export default function Footer({ pageId }: FooterProps) {
   const currentYear = new Date().getFullYear();
-  
+
   // Simulasi data views (Nantinya bisa dihubungkan ke API GA4 atau Database)
-  // const totalViews = "1,240"; 
+  // const totalViews = "1,240";
 
   return (
     <footer className="bg-white border-t border-slate-200 pt-20 pb-10 font-sans">
@@ -78,15 +76,19 @@ export default function Footer({
             </h4>
             <div className="space-y-5">
               <a
-                href="mailto:hello@donydev.com"
+                href="mailto:donnyfahrudi@gmail.com"
                 className="flex items-center gap-4 p-3 bg-white border border-slate-200 rounded-2xl hover:border-indigo-300 hover:shadow-md transition-all group"
               >
                 <div className="w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-600 rounded-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                   <Mail size={20} />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Email Me</span>
-                  <span className="text-sm font-semibold text-slate-700">donnyfahrudi@gmail.com</span>
+                  <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">
+                    Email Me
+                  </span>
+                  <span className="text-sm font-semibold text-slate-700">
+                    donnyfahrudi@gmail.com
+                  </span>
                 </div>
               </a>
 
@@ -98,8 +100,12 @@ export default function Footer({
                   <MessageCircle size={20} />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Quick Chat</span>
-                  <span className="text-sm font-semibold text-slate-700">WhatsApp Me</span>
+                  <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">
+                    Quick Chat
+                  </span>
+                  <span className="text-sm font-semibold text-slate-700">
+                    WhatsApp Me
+                  </span>
                 </div>
               </a>
             </div>
@@ -112,7 +118,9 @@ export default function Footer({
             <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
             <div className="relative px-4 py-2 bg-white border border-slate-100 rounded-lg shadow-sm">
               <p className="text-sm font-bold tracking-tight bg-gradient-to-r from-slate-900 via-indigo-800 to-slate-900 bg-clip-text text-transparent">
-                © {currentYear} <span className="text-indigo-600">All Right Reserved.</span> DonyDev.
+                © {currentYear}{" "}
+                <span className="text-indigo-600">All Right Reserved.</span>{" "}
+                DonyDev.
               </p>
             </div>
           </div>
@@ -130,17 +138,28 @@ export default function Footer({
 
             <div className="flex items-center gap-6">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="text-xs font-bold text-slate-400 hover:text-indigo-600 uppercase tracking-widest transition-colors"
               >
                 Privacy Policy
               </Link>
+
               <div className="hidden md:block w-1 h-1 bg-slate-300 rounded-full"></div>
+
               <Link
-                href="/terms"
+                href="/terms-of-service"
                 className="text-xs font-bold text-slate-400 hover:text-indigo-600 uppercase tracking-widest transition-colors"
               >
-                Terms
+                Terms of Service
+              </Link>
+
+              <div className="hidden md:block w-1 h-1 bg-slate-300 rounded-full"></div>
+
+              <Link
+                href="/disclaimer"
+                className="text-xs font-bold text-slate-400 hover:text-indigo-600 uppercase tracking-widest transition-colors"
+              >
+                Disclaimer
               </Link>
             </div>
           </div>
