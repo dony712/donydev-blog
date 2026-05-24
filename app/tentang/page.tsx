@@ -11,6 +11,40 @@ import {
   Globe,
   Code2,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tentang Dony Fahrudy - DonyDev Blog",
+
+  description:
+    "Mengenal Dony Fahrudy, penulis DonyDev Blog. Blog pribadi tentang teknologi, ilmu komputer, AI, software development, dan pengalaman dunia digital.",
+
+  keywords: [
+    "tentang dony fahrudy",
+    "dony dev",
+    "donydev blog",
+    "blog teknologi indonesia",
+    "penulis blog teknologi",
+  ],
+
+  alternates: {
+    canonical: "/tentang",
+  },
+
+  openGraph: {
+    title: "Tentang Dony Fahrudy - DonyDev Blog",
+    description:
+      "Profil penulis DonyDev Blog dan perjalanan belajar di dunia teknologi, AI, dan software development.",
+    url: "/tentang",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -57,7 +91,8 @@ export default function AboutPage() {
               </div>
 
               <h2 className="text-3xl font-black mb-5">
-                Tentang <span className="text-indigo-600">donydev-blog.com</span>
+                Tentang{" "}
+                <span className="text-indigo-600">donydev-blog.com</span>
               </h2>
 
               <div className="space-y-5 text-slate-600 leading-relaxed text-[17px]">
@@ -94,9 +129,7 @@ export default function AboutPage() {
 
                 <p className="text-slate-300 leading-relaxed text-[17px]">
                   Perkenalkan, saya bernama{" "}
-                  <span className="text-white font-semibold">
-                    Dony Fahrudy
-                  </span>
+                  <span className="text-white font-semibold">Dony Fahrudy</span>
                   . Saya memiliki latar belakang pendidikan ilmu komputer dan
                   beragama Islam.
                 </p>
@@ -135,8 +168,8 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  Melalui blog ini saya juga ingin berbagi apa yang saya pelajari
-                  kepada siapa saja yang membutuhkan.
+                  Melalui blog ini saya juga ingin berbagi apa yang saya
+                  pelajari kepada siapa saja yang membutuhkan.
                 </p>
               </div>
             </div>
@@ -148,9 +181,7 @@ export default function AboutPage() {
             <div className="bg-gradient-to-br from-indigo-600 to-blue-500 rounded-[2.5rem] p-8 text-white">
               <Code2 size={34} className="mb-6 opacity-80" />
 
-              <h3 className="text-2xl font-black mb-4">
-                Grow & Share
-              </h3>
+              <h3 className="text-2xl font-black mb-4">Grow & Share</h3>
 
               <p className="text-indigo-100 leading-relaxed">
                 Misi saya sederhana: terus belajar, berkembang, dan membagikan
@@ -160,14 +191,9 @@ export default function AboutPage() {
 
             {/* Contact */}
             <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-sm">
-              <BookOpen
-                size={30}
-                className="text-indigo-600 mb-6"
-              />
+              <BookOpen size={30} className="text-indigo-600 mb-6" />
 
-              <h3 className="text-2xl font-black mb-6">
-                Hubungi Penulis
-              </h3>
+              <h3 className="text-2xl font-black mb-6">Hubungi Penulis</h3>
 
               <div className="space-y-4">
                 <a

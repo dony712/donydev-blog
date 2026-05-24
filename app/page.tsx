@@ -6,11 +6,51 @@ import { Metadata } from "next";
 import { Monitor, ArrowRight, Sparkles } from "lucide-react"; // Pastikan lucide-react terinstall
 
 export const metadata: Metadata = {
-  title: "💻 Dony Dev - Nice to Share",
+  title: "DonyDev Blog - Teknologi, AI Productivity & Software Development",
+
   description:
-    "Eksplorasi alat AI Productivity terbaik untuk meningkatkan efisiensi kerja Anda di tahun 2026.",
+    "Blog pribadi Dony Fahrudy tentang teknologi, AI productivity, software development, React Native, Next.js, ilmu komputer, dan pengalaman dunia digital.",
+
+  keywords: [
+    "dony dev",
+    "donydev blog",
+    "blog teknologi",
+    "AI productivity",
+    "software development",
+    "React Native Indonesia",
+    "Next.js Indonesia",
+    "teknologi AI",
+    "blog programmer Indonesia",
+  ],
+
   alternates: {
-    canonical: "https://donydev.com",
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "DonyDev Blog - Teknologi, AI Productivity & Software Development",
+    description:
+      "Belajar AI, programming, software development, dan teknologi terbaru bersama DonyDev Blog.",
+    url: "/",
+    siteName: "DonyDev Blog",
+    locale: "id_ID",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "DonyDev Blog Homepage",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "DonyDev Blog - Teknologi, AI Productivity & Software Development",
+    description:
+      "Blog teknologi Indonesia tentang AI, programming, Next.js, React Native dan software development.",
+    images: ["/og-image.png"],
   },
 };
 
