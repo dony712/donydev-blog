@@ -17,5 +17,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.9,
     },
+    {
+      url: "https://www.donydev-blog.com/ai/alat-ai-produktivitas/ai-keuangan",
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: "https://www.donydev-blog.com/ai/alat-ai-produktivitas/ai-nutrisi",
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: "https://www.donydev-blog.com/ai/alat-ai-produktivitas/ai-kreatif",
+      lastModified: new Date(),
+      priority: 0.9,
+    },
   ];
 }
