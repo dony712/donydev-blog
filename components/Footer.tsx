@@ -53,18 +53,56 @@ export default function Footer({ pageId }: FooterProps) {
               <div className="w-1.5 h-6 bg-indigo-600 rounded-full"></div>
               Topik Populer
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
+              {/* Parent Category */}
               <li>
                 <Link
                   href="/ai/alat-ai-produktivitas"
-                  className="flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-all group"
+                  className="flex items-center gap-2 text-slate-700 hover:text-indigo-600 transition-all group"
                 >
                   <ChevronRight
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
                   />
-                  <span className="text-sm font-medium">AI Productivity</span>
+                  <span className="text-sm font-semibold">AI Productivity</span>
                 </Link>
+
+                {/* Sub Categories */}
+                <ul className="mt-4 ml-6 space-y-3 border-l border-slate-200 pl-4">
+                  <li>
+                    <Link
+                      href="/ai/alat-ai-produktivitas/ai-nutrisi"
+                      className="flex items-center gap-2 text-slate-500 hover:text-emerald-600 transition-all group"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                      <span className="text-sm">
+                        AI Nutrisi & Meal Planning
+                      </span>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href="/ai/alat-ai-produktivitas/ai-keuangan"
+                      className="flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-all group"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                      <span className="text-sm">AI Keuangan Pribadi</span>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href="/ai/alat-ai-produktivitas/ai-kreatif"
+                      className="flex items-center gap-2 text-slate-500 hover:text-purple-600 transition-all group"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                      <span className="text-sm">
+                        AI Kreatif & Content Creator
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

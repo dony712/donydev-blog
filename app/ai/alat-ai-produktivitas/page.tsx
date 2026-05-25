@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import type { Metadata } from "next";
 import {
   Rocket,
@@ -58,17 +59,18 @@ export const metadata: Metadata = {
 const blogPosts = [
   {
     id: 1,
+    slug: "ai-nutrisi",
     title: "AI untuk Mengatur Jadwal Makan & Nutrisi",
     category: "Health Tech",
     icon: <Utensils className="w-6 h-6 text-emerald-600" />,
     description:
       "Bagaimana algoritma LLM dan Computer Vision membantu Anda mencapai target diet tanpa rasa pusing.",
     longDescription:
-      "Di tahun 2026, diet bukan lagi soal menebak kalori. Integrasi AI dengan alat seperti Zoe atau MyFitnessPal memungkinkan pembuatan rencana makan berdasarkan respon glukemik tubuh Anda secara real-time. Bahkan, Computer Vision sekarang bisa mengenali sisa bahan di kulkas melalui kamera ponsel untuk menyarankan resep sehat yang meminimalisir limbah makanan.",
+      "Di tahun 2026, diet bukan lagi soal menebak kalori. Integrasi AI dengan alat seperti meal planner berbasis machine learning memungkinkan pembuatan pola makan personal berdasarkan kebutuhan tubuh, target kesehatan, hingga preferensi makanan harian.",
     points: [
       "Penyusunan menu berbasis profil biometrik",
       "Analisis bahan makanan via Computer Vision",
-      "Integrasi belanja otomatis via Groceries API",
+      "Integrasi meal planning otomatis",
     ],
     sources: [
       {
@@ -80,17 +82,18 @@ const blogPosts = [
   },
   {
     id: 2,
+    slug: "ai-keuangan",
     title: "Otomatisasi Keuangan & Mikro-Investasi",
     category: "Fintech",
     icon: <Wallet className="w-6 h-6 text-blue-600" />,
     description:
-      "Gunakan Agentic AI untuk mengelola cashflow dan memotong pengeluaran yang tidak perlu secara otomatis.",
+      "Gunakan AI untuk mengelola cashflow, budgeting, dan investasi mikro dengan lebih efisien.",
     longDescription:
-      "Keuangan rumah tangga kini dikelola oleh 'Personal Finance Agents'. AI tidak hanya mencatat pengeluaran, tetapi secara proaktif memindahkan saldo mengendap ke instrumen investasi mikro saat bunga naik. Dengan bantuan Predictive Analytics, AI dapat memperingatkan Anda jika pengeluaran kopi harian Anda berisiko mengganggu cicilan rumah di akhir bulan.",
+      "AI kini membantu pengguna mengatur keuangan pribadi dengan sistem budgeting otomatis, analisis pengeluaran, hingga rekomendasi investasi berbasis profil risiko.",
     points: [
-      "Deteksi otomatis biaya langganan 'hantu'",
-      "Strategi alokasi gaji otomatis (50/30/20)",
-      "Prediksi arus kas hingga 12 bulan ke depan",
+      "Deteksi biaya langganan tersembunyi",
+      "Strategi alokasi gaji otomatis",
+      "Prediksi cashflow bulanan",
     ],
     sources: [
       {
@@ -102,16 +105,17 @@ const blogPosts = [
   },
   {
     id: 3,
+    slug: "ai-kreatif",
     title: "AI Kreatif: Fotografi & Musik Tanpa Batas",
     category: "Creative",
     icon: <Camera className="w-6 h-6 text-purple-600" />,
     description:
-      "Meningkatkan workflow kreatif menggunakan Generative AI sebagai asisten teknis, bukan pengganti ide.",
+      "Memanfaatkan Generative AI sebagai partner kreatif untuk fotografi, editing, dan musik.",
     longDescription:
-      "Dalam dunia fotografi, AI kini mampu melakukan 'Generative Expand' untuk memperbaiki komposisi yang terpotong tanpa kehilangan detail tekstur asli. Di sisi musik, teknologi Stem Splitting berbasis AI memungkinkan hobiis memisahkan vokal dan instrumen secara instan untuk latihan. Fokusnya adalah menghilangkan hambatan teknis agar kreativitas murni tetap berada di tangan manusia.",
+      "AI kreatif bukan pengganti kreativitas manusia, tetapi alat bantu yang mempercepat workflow editing foto, pembuatan musik, hingga eksplorasi ide visual.",
     points: [
-      "Generative Fill & Expand (Adobe Firefly)",
-      "Stem Splitting untuk musisi kamar",
+      "Generative Fill & Expand",
+      "AI music separation",
       "Kurasi foto otomatis berbasis estetika",
     ],
     sources: [
@@ -234,14 +238,70 @@ export default function BlogPage() {
                   </div>
                 </div>
 
-                <button className="flex items-center gap-2 text-blue-600 font-bold text-sm group">
-                  Baca Selengkapnya{" "}
+                <Link
+                  href={`/ai/alat-ai-produktivitas/${post.slug}`}
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm group hover:text-indigo-600 transition-colors"
+                >
+                  Baca Selengkapnya
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             </section>
           ))}
         </div>
+
+        <section className="mt-40 bg-white rounded-[2rem] border border-slate-200 p-10 md:p-16 shadow-sm">
+          <div className="max-w-4xl">
+            <span className="inline-flex px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-6">
+              AI Productivity 2026
+            </span>
+
+            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-8">
+              Mengapa Alat AI Produktivitas Semakin Penting?
+            </h2>
+
+            <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
+              <p>
+                Artificial Intelligence kini menjadi bagian penting dalam
+                kehidupan sehari-hari. Mulai dari mengatur pola makan, membantu
+                pengelolaan keuangan, hingga meningkatkan kreativitas digital,
+                teknologi AI mampu membantu manusia bekerja lebih cepat dan
+                lebih efisien.
+              </p>
+
+              <p>
+                Dengan memilih alat AI yang tepat, Anda dapat menghemat waktu,
+                mengurangi pekerjaan repetitif, serta meningkatkan kualitas
+                keputusan berdasarkan analisis data yang lebih akurat.
+              </p>
+
+              <p>
+                Pada halaman ini, Anda dapat mempelajari lebih dalam mengenai{" "}
+                <Link
+                  href="/ai/alat-ai-produktivitas/ai-nutrisi"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  AI untuk nutrisi
+                </Link>
+                ,{" "}
+                <Link
+                  href="/ai/alat-ai-produktivitas/ai-keuangan"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  AI keuangan pribadi
+                </Link>
+                , dan{" "}
+                <Link
+                  href="/ai/alat-ai-produktivitas/ai-kreatif"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  AI kreatif untuk fotografi & musik
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer pageId="alat-ai-produktivitas" />

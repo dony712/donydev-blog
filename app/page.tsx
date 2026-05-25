@@ -1,4 +1,5 @@
 // src/app/page.tsx
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import CategoryCard from "@/components/CategoryCard";
 import Footer from "@/components/Footer";
@@ -59,20 +60,34 @@ export default function HomePage() {
 
   // Kategori sesuai permintaan (Single Category)
   const categories = [
-    { name: "AI Productivity", slug: "alat-ai-produktivitas", icon: "🚀" },
+    { name: "AI Productivity", slug: "alat-ai-produktivitas", icon: "🤖" },
   ];
 
   // Artikel Terbaru (Hanya berkaitan dengan AI Productivity) [cite: 82, 277]
   const featuredPosts = [
     {
-      title: "Cara AI Mengatur Jadwal Makan Otomatis",
-      slug: "ai-jadwal-makan",
-      category: "AI Productivity",
+      title: "AI untuk Mengatur Jadwal Makan & Nutrisi Lebih Cerdas",
+      slug: "ai-nutrisi",
+      category: "Health Tech",
+      readTime: "6 Menit Baca",
+      description:
+        "Pelajari bagaimana Artificial Intelligence membantu meal planning, tracking kalori, hingga rekomendasi nutrisi personal.",
     },
     {
-      title: "5 Alat AI Gratis untuk Manajemen Proyek",
-      slug: "ai-project-management",
-      category: "AI Productivity",
+      title: "AI untuk Keuangan Pribadi & Budgeting Otomatis",
+      slug: "ai-keuangan",
+      category: "Fintech",
+      readTime: "7 Menit Baca",
+      description:
+        "Gunakan AI untuk budgeting, prediksi cashflow, investasi mikro, dan pengelolaan finansial lebih pintar.",
+    },
+    {
+      title: "AI Kreatif untuk Fotografi, Musik & Konten Digital",
+      slug: "ai-kreatif",
+      category: "Creative",
+      readTime: "8 Menit Baca",
+      description:
+        "Eksplorasi bagaimana Generative AI membantu editing foto, musik, dan workflow kreatif modern.",
     },
   ];
 
@@ -110,9 +125,13 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="bg-indigo-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all hover:scale-105 shadow-xl shadow-indigo-200 flex items-center gap-2 text-lg">
-                  Mulai Sekarang <ArrowRight className="w-5 h-5" />
-                </button>
+                <Link
+                  href="/ai/alat-ai-produktivitas"
+                  className="bg-indigo-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-indigo-700 transition-all hover:scale-105 shadow-xl shadow-indigo-200 flex items-center gap-2 text-lg"
+                >
+                  Mulai Sekarang
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           </div>
@@ -127,9 +146,9 @@ export default function HomePage() {
                 Pilih topik yang sesuai dengan kebutuhan Anda
               </p>
             </div>
-            <button className="text-blue-600 font-semibold hover:underline">
+            {/* <button className="text-blue-600 font-semibold hover:underline">
               Lihat Semua
-            </button>
+            </button> */}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((cat) => (
@@ -142,35 +161,81 @@ export default function HomePage() {
         <section className="py-24 px-4 bg-slate-50/50">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-bold tracking-tight">
-                Artikel Terpopuler
-              </h2>
-              <button className="text-indigo-600 font-bold hover:text-indigo-800 flex items-center gap-1 transition">
-                Lihat Semua <ArrowRight className="w-4 h-4" />
-              </button>
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight mb-2">
+                  Artikel Terpopuler
+                </h2>
+                <p className="text-slate-500">
+                  Panduan AI productivity paling banyak dibaca
+                </p>
+              </div>
+
+              <Link
+                href="/ai/alat-ai-produktivitas"
+                className="text-indigo-600 font-bold hover:text-indigo-800 flex items-center gap-1 transition"
+              >
+                Lihat Semua
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredPosts.map((post) => (
-                <div
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {featuredPosts.map((post, index) => (
+                <article
                   key={post.slug}
-                  className="group p-8 bg-white border border-slate-200 rounded-[2.5rem] hover:shadow-2xl hover:shadow-indigo-100 hover:border-indigo-200 transition-all duration-500"
+                  className="group relative overflow-hidden p-8 bg-white border border-slate-200 rounded-[2.5rem] hover:shadow-2xl hover:shadow-indigo-100 hover:border-indigo-200 transition-all duration-500"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full uppercase tracking-widest">
-                      {post.category}
-                    </span>
-                    <span className="text-slate-300">•</span>
-                    <span className="text-slate-400 text-sm">5 Menit Baca</span>
+                  {/* Decorative Gradient */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-indigo-100/60 to-transparent blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-5 flex-wrap">
+                      <span className="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-full uppercase tracking-widest">
+                        {post.category}
+                      </span>
+
+                      <span className="text-slate-300">•</span>
+
+                      <span className="text-slate-400 text-sm">
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    <div className="mb-5">
+                      <span className="text-5xl font-black text-slate-100">
+                        0{index + 1}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-bold mb-4 leading-tight group-hover:text-indigo-600 transition-colors">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-slate-500 leading-relaxed mb-8">
+                      {post.description}
+                    </p>
+
+                    <Link
+                      href={`/ai/alat-ai-produktivitas/${post.slug}`}
+                      className="inline-flex items-center gap-2 text-slate-900 font-bold group/btn hover:text-indigo-600 transition-colors"
+                    >
+                      Baca Artikel
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 leading-tight group-hover:text-indigo-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  <button className="text-slate-900 font-bold flex items-center gap-2 group/btn">
-                    Baca Artikel{" "}
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+                </article>
               ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-16 text-center">
+              <Link
+                href="/ai/alat-ai-produktivitas"
+                className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all hover:scale-[1.02] shadow-lg shadow-indigo-200"
+              >
+                Jelajahi Semua Artikel AI
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </section>
