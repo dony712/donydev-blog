@@ -137,6 +137,8 @@ export default function RootLayout({
       <head>
         {/* Google Adsense */}
         <meta name="google-adsense-account" content="ca-pub-6211849658783097" />
+        {/* SEO google */}
+        <meta name="google-site-verification" content="PjxA7l-vvYitXIFcJ7C49vtwbxvWiqwaRXINC6ddqZg" />
 
         {/* adsens hanya support -> <script */}
         <script
