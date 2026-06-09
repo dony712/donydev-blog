@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.donydev-blog.com"),
 
+  verification: {
+    google: "PjxA7l-vvYitXIFcJ7C49vtwbxvWiqwaRXINC6ddqZg",
+  },
+
   title: {
     default: "DonyDev Blog - Teknologi, AI, Programming & Produktivitas",
     template: "%s | DonyDev Blog",
