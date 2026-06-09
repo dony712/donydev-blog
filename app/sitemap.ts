@@ -32,5 +32,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.9,
     },
+    {
+      url: "https://www.donydev-blog.com/disclaimer",
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: "https://www.donydev-blog.com/privacy-policy",
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: "https://www.donydev-blog.com/terms-of-service",
+      lastModified: new Date(),
+      priority: 0.9,
+    },
   ];
 }
